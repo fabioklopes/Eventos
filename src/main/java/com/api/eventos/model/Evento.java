@@ -1,15 +1,26 @@
 package com.api.eventos.model;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import java.time.LocalDateTime;
-
+@Entity
+@Table(name = "eventos")
 public class Evento {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nomeEvento;
     private String localEvento;
-    private LocalDateTime dataEvento;
-
+    private String dataEvento;
+    private String horaEvento;
     
+    @Override
+    public String toString() {
+        return "Evento [id=" + id + ", nomeEvento=" + nomeEvento + ", localEvento=" + localEvento + ", dataEvento=" + dataEvento + ", horaEvento=" + horaEvento + "]";
+    }
     public Long getId() {
         return id;
     }
@@ -28,15 +39,17 @@ public class Evento {
     public void setLocalEvento(String localEvento) {
         this.localEvento = localEvento;
     }
-    public LocalDateTime getDataEvento() {
+    public String getDataEvento() {
         return dataEvento;
     }
-    public void setDataEvento(LocalDateTime dataEvento) {
+    public void setDataEvento(String dataEvento) {
         this.dataEvento = dataEvento;
     }
-
-
-    
-
+    public String getHoraEvento() {
+        return horaEvento;
+    }
+    public void setHoraEvento(String horaEvento) {
+        this.horaEvento = horaEvento;
+    }
     
 }

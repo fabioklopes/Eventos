@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <div th:replace="~{templates :: menu}"></div>
+    <div class="row container">
+        <form action="/eventos" method="post" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Nome do Evento" name="nomeEvento" type="text" class="validate">
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Local do Evento" name="localEvento" type="text" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Data do Evento" name="dataEvento" type="date" class="validate">
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Hora do Evento" name="horaEvento" type="time" class="validate">
+                </div>
+            </div>
+            <button class="waves-effect waves-light btn" type="submit">GRAVAR</button> | <button class="waves-effect waves-light btn" type="reset">LIMPAR</button>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
